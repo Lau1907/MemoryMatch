@@ -29,6 +29,8 @@ Al completar todos los pares, se muestra el tiempo total y si es un nuevo récor
 | Testing        | JUnit 4 — lógica de mezcla, flip y match, sin emulador         |
 
 ## Estructura del proyecto
+
+```
 wear/src/main/java/mx/utng/memorymatch/
 ├── domain/
 │   ├── model/        → Card, CardSymbol, GameState, GamePhase, MatchResult
@@ -40,6 +42,7 @@ wear/src/main/java/mx/utng/memorymatch/
 │   └── repository/     → BestTimeRepositoryImpl
 ├── presentation/board/ → MemoryViewModel, BoardScreen, CardItem, VictoryScreen
 └── GameActivity.kt
+```
 ## Cómo correr el proyecto
 
 1. Clona el repositorio
