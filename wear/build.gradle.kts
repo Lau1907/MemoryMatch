@@ -1,5 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
+    id("org.jetbrains.kotlin.plugin.compose")
+
 }
 
 android {
@@ -35,12 +37,17 @@ android {
 }
 
 dependencies {
+    // BOM: alinea automáticamente las versiones de Compose entre sí
+    val composeBom = platform("androidx.compose:compose-bom:2024.09.00")
+    implementation(composeBom)
+
     // Compose for Wear OS
     implementation("androidx.wear.compose:compose-material:1.3.1")
     implementation("androidx.wear.compose:compose-foundation:1.3.1")
 
-    // Animaciones (flip de tarjetas)
-    implementation("androidx.compose.animation:animation:1.7.6")
+    // Animaciones (ya sin número de versión — lo toma del BOM)
+    implementation("androidx.compose.animation:animation")
+    implementation("androidx.compose.ui:ui")
 
     // ViewModel + Coroutines
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7")
